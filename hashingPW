@@ -1,0 +1,28 @@
+import hashlib
+set_username = ""
+set_pw = ""
+
+Set_username = input("Please set your username.")
+temp = input("Please set your password.")
+temp = temp.encode("utf-8")
+set_pw = hashlib.md5(temp.strip()).hexdigest()
+print(f"Password was hashed to: {set_pw}")
+
+print("\n################################")
+print("Welcome to the login Window.")
+username = input("please enter your username.")
+temp = input("Please enter your password.")
+temp = temp.encode("utf-8")
+pw = hashlib.md5(temp.strip()).hexdigest()
+print(f"Password was hashed to: {pw}")
+
+while set_username != username and set_pw != pw:
+    print("Either the username or pw was incorrect. Please try again.")
+    print("\n################################")
+    print("Welcome to the login Window.")
+    username = input("please enter your username.")
+    temp = input("Please enter your password.")
+    temp = temp.encode("utf-8")
+    pw = hashlib.md5(temp.strip()).hexdigest()
+    print(f"Password was hashed to: {pw}")
+print("\nUsername and password match. \nWelcome!")
